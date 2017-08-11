@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body>
+<div ng-controller='aCtrl'>
+    <form>
+    	Name:
+    	<input type="text" ng-model="movies.name"><br/>
+    	
+    	Actors:
+    	<select ng-model="actor" ng-options="actor.name as actor.name for actor in actors" multiple>
+    	</select>
+
+    	<button ng-click = "isShow = true">add</button><br/>
+    	<div ng-show = "isShow" ng-repeat="act in actor">{{act}}</div>
+    	<input type="file" name="poster"><br/>
+    	<button>Submit</button>
+    </form>
+</div>
+<script src="app.js"></script>
+</body>
+
+</html>
